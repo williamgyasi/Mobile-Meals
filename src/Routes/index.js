@@ -14,9 +14,9 @@ const Navigation=()=>{
         <NavigationContainer>
             <RootStack.Screen name="Random" component={RandomScreen} />
             <RootStack.Screen name="Homescreen" component={HomeScreen} />
-            
         </NavigationContainer>
     )
 }
 
+export default Navigation;
 

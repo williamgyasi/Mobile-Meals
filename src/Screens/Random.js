@@ -9,4 +9,4 @@ const Random =()=>{
     )
 }
 
-export const Random
+export default Random
