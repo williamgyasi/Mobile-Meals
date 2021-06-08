@@ -14,7 +14,6 @@ const Navigation = () => {
       <RootStack.Navigator initialRouteName="Homescreen"
       screenOptions={{
           headerShown:false,
-        
       }}
       >
         <RootStack.Screen name="Random" component={RandomScreen} />

@@ -1,18 +1,22 @@
-import React from 'react'
-import { Text, View } from 'native-base'
-import {SafeAreaView} from 'react-native'
+import React, { useState } from "react";
+import { Text, View } from "native-base";
+import { SafeAreaView, StatusBar } from "react-native";
 //components
-import {
-SearchBar
-} from '../Components'
+import { SearchBar } from "../Components";
 
-
-const HomeScreen = ()=>{
-    return(
-        <SafeAreaView style={{flex:1,backgroundColor:"red",alignItems:"center",justifyContent:"center"}}>
-            <SearchBar />
-        </SafeAreaView>
-    )
-}
+const HomeScreen = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        marginTop: StatusBar.currentHeight,
+      }}
+    >
+      <SearchBar term={searchTerm} onTermChange={setSearchTerm} onTermSubmit={()=>alert(searchTerm)} />
+      <Text>{searchTerm}</Text>
+    </SafeAreaView>
+  );
+};
 
 export default HomeScreen;
