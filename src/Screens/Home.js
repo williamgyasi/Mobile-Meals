@@ -9,11 +9,13 @@ import useResults from '../Hooks/useResults'
 
 const HomeScreen = () => {
   const [term, setTerm] = useState("");
-  const [results,errorMsg,searchApi] =useResults()
+  const [results]=useResults()
 
+  console.log(results)
+  
   const filterByPrice =(price)=>{
       return results.filter(result=>{
-          console.log(result)
+          return result.price===price
       });
   }
 

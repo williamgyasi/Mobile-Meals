@@ -1,5 +1,6 @@
 import React ,{useState,useEffect} from 'react'
 import yelp from '../Api/Yelp'
+
 export default ()=>{
     const [results, setResults] = useState([]);
     const [errorMsg,setErrorMsg]=useState("")
@@ -14,12 +15,13 @@ export default ()=>{
           },
         });
         // console.log(response.data)
-        setResults(response.data.businesses);
+        setResults(response.data.businesses);  
     };
   
     useEffect(()=>{
         searchApi('pasta')
+        
     },[])
 
-    return [errorMsg,searchApi,results]
+    return [results]
 }
