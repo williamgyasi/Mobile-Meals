@@ -2,16 +2,23 @@ import { Item } from 'native-base'
 import React from 'react'
 import {View,Text, FlatList} from 'react-native'
 
+//COMPONENTS
+import {
+    ResultDetail
+}from '../Components'
+
 const ResultsList=({title,results})=>{
     return(
-        <View>
-            <Text>{title}</Text>
+        <View style={{marginBottom:10}}>
+            <Text style={{marginBottom:10,fontSize:20,fontWeight:"bold"}}>{title}</Text>
             <FlatList 
             data={results}
             horizontal
+            bounces
+            showsHorizontalScrollIndicator={false}
             keyExtractor={()=>results.id}
             renderItem={({item})=>(
-                <Text>{item.name}</Text>
+               <ResultDetail item={item}  />
             )}
             />
         </View>

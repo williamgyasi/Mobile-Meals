@@ -19,7 +19,7 @@ export default ()=>{
     };
   
     useEffect(()=>{
-        searchApi('pasta')
+        searchApi('rice')
         
     },[])
 

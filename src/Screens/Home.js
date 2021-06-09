@@ -1,13 +1,13 @@
 import React, { useState,useEffect } from "react";
 import { Text, View } from "native-base";
-import { SafeAreaView, StatusBar } from "react-native";
+import { SafeAreaView, StatusBar,ScrollView } from "react-native";
 //components
 import { SearchBar,ResultsList } from "../Components";
 
 //HOOKS
 import useResults from '../Hooks/useResults'
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [term, setTerm] = useState("");
   const [results]=useResults()
 
@@ -24,6 +24,7 @@ const HomeScreen = () => {
       style={{
         flex: 1,
         marginTop: StatusBar.currentHeight,
+
       }}
     >
       <SearchBar
@@ -31,9 +32,12 @@ const HomeScreen = () => {
         onTermChange={setTerm}
         onTermSubmit={()=>searchApi(term)}
       />
+      <ScrollView>
       <ResultsList results={filterByPrice('$')} title="Cost Effective" />
       <ResultsList results={filterByPrice('$$')} title="Pricier" />
-      <ResultsList results={filterByPrice('$$$')} title="Cheap" />
+      <ResultsList results={filterByPrice('$$')} title="Cheap" />
+      </ScrollView>
+     
     </SafeAreaView>
   );
 };
