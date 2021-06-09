@@ -1,28 +1,21 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Text, View } from "native-base";
 import { SafeAreaView, StatusBar } from "react-native";
 //components
-import { SearchBar } from "../Components";
+import { SearchBar,ResultsList } from "../Components";
 
-//API
-import yelp from "../Api/Yelp";
+//HOOKS
+import useResults from '../Hooks/useResults'
 
 const HomeScreen = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [results, setResults] = useState([]);
+  const [term, setTerm] = useState("");
+  const [results,errorMsg,searchApi] =useResults()
 
-  const searchApi = async () => {
-    const response = await yelp.get("/search", {
-      params: {
-        limit: 50,
-        term: searchTerm,
-        location: "san jose",
-      },
-    });
-    // console.log(response.data)
-    setResults(response.data.businesses);
-  };
-
+  const filterByPrice =(price)=>{
+      return results.filter(result=>{
+          console.log(result)
+      });
+  }
 
   return (
     <SafeAreaView
@@ -32,11 +25,13 @@ const HomeScreen = () => {
       }}
     >
       <SearchBar
-        term={searchTerm}
-        onTermChange={setSearchTerm}
-        onTermSubmit={searchApi}
+        term={term}
+        onTermChange={setTerm}
+        onTermSubmit={()=>searchApi(term)}
       />
-      <Text>we have found {results.length} results</Text>
+      <ResultsList results={filterByPrice('$')} title="Cost Effective" />
+      <ResultsList results={filterByPrice('$$')} title="Pricier" />
+      <ResultsList results={filterByPrice('$$$')} title="Cheap" />
     </SafeAreaView>
   );
 };
