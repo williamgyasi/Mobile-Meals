@@ -1,13 +1,17 @@
 import React from 'react'
-import { View,Text } from 'react-native'
+import { View,Text,StatusBar,SafeAreaView } from 'react-native'
 
-const ShowResults =()=>{
+const ShowResults =({route})=>{
     return(
-        <View>
+        <SafeAreaView
+        style={{
+            marginTop:StatusBar.currentHeight
+        }}
+        >
             <Text>
-                I AM THE RESUTS
+                {route.params.itemID}
             </Text>
-        </View>
+        </SafeAreaView>
     )
 }
 

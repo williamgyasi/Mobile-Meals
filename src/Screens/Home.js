@@ -1,43 +1,53 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, View } from "native-base";
-import { SafeAreaView, StatusBar,ScrollView } from "react-native";
+import { SafeAreaView, StatusBar, ScrollView, } from "react-native";
 //components
-import { SearchBar,ResultsList } from "../Components";
+import { SearchBar, ResultsList } from "../Components";
 
 //HOOKS
-import useResults from '../Hooks/useResults'
+import useResults from "../Hooks/useResults";
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = () => {
   const [term, setTerm] = useState("");
-  const [results]=useResults()
+  const [results] = useResults();
 
-  console.log(results)
-  
-  const filterByPrice =(price)=>{
-      return results.filter(result=>{
-          return result.price===price
-      });
-  }
+  console.log(results);
+
+  const filterByPrice = (price) => {
+    return results.filter((result) => {
+      return result.price === price;
+    });
+  };
 
   return (
     <SafeAreaView
       style={{
         flex: 1,
         marginTop: StatusBar.currentHeight,
-
       }}
     >
       <SearchBar
         term={term}
         onTermChange={setTerm}
-        onTermSubmit={()=>searchApi(term)}
+        onTermSubmit={() => searchApi(term)}
       />
       <ScrollView>
-      <ResultsList results={filterByPrice('$')} title="Cost Effective" />
-      <ResultsList results={filterByPrice('$$')} title="Pricier" />
-      <ResultsList results={filterByPrice('$$')} title="Cheap" />
+        <ResultsList
+         
+          results={filterByPrice("$")}
+          title="Cost Effective"
+        />
+        <ResultsList
+          results={filterByPrice("$$")}
+          
+          title="Pricier"
+        />
+        <ResultsList
+          results={filterByPrice("$$")}
+          
+          title="Cheap"
+        />
       </ScrollView>
-     
     </SafeAreaView>
   );
 };

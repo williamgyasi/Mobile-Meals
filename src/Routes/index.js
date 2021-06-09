@@ -11,7 +11,9 @@ const RootStack = createStackNavigator();
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+    
+    >
       <RootStack.Navigator initialRouteName="Homescreen"
       screenOptions={{
           headerShown:false,
