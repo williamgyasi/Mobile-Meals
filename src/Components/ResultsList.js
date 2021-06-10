@@ -9,6 +9,7 @@ import {
 }from '../Components'
 
 const ResultsList=({title,results,navigation})=>{
+    if(!results.length) return null;
     return(
         <View style={{marginBottom:10}}>
             <Text style={{marginBottom:10,fontSize:20,fontWeight:"bold"}}>{title}</Text>

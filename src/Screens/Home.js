@@ -43,7 +43,7 @@ const HomeScreen = () => {
           title="Pricier"
         />
         <ResultsList
-          results={filterByPrice("$$")}
+          results={filterByPrice("$$$")}
           
           title="Cheap"
         />
