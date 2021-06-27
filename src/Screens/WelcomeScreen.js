@@ -10,8 +10,9 @@ import {
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 
+
 //COMPONENTS
-import { MStatusBar } from "../Components";
+import { MStatusBar,MButton } from "../Components";
 
 const { width, height } = Dimensions.get("window");
 
@@ -41,7 +42,7 @@ export default function WelcomeScreen({ navigation }) {
                 <Text style={{fontSize:50,color:"#fff",fontWeight:"bold"}}>
                     Mobile Meals
                 </Text>
-                <Text style={{fontSize:18,color:"#fff",fontWeight:"300",textAlign:"center"}}>
+                <Text style={{fontSize:14,color:"#ccca",fontWeight:"100",textAlign:"center",}}>
                     Food on the Go!
                 </Text>
             </LinearGradient>
@@ -49,9 +50,13 @@ export default function WelcomeScreen({ navigation }) {
             
         </ImageBackground>
       </View>
-      <View style={{position:"absolute",bottom:0,right:0,left:0,}}>
-          <Button title="Login"  />
-          <Button title="Register" />
+      <View style={{position:"absolute",bottom:80,right:0,left:0,marginHorizontal:10}}>
+          <MButton style={{marginBottom:10}} >
+              Register
+          </MButton>
+          <MButton dark >
+              Login
+          </MButton>
       </View>
     </SafeAreaView>
   );
