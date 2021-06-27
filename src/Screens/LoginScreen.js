@@ -8,8 +8,8 @@ import {
   View,
   Button,
 } from "react-native";
-import {TextInput} from 'react-native-paper'
-import { Input, NativeBaseProvider,useColorModeValue } from "native-base";
+import { TextInput } from "react-native-paper";
+import { Input, NativeBaseProvider, useColorModeValue } from "native-base";
 import { LinearGradient } from "expo-linear-gradient";
 
 //COMPONENTS
@@ -18,24 +18,21 @@ import { MStatusBar, MButton } from "../Components";
 const { width, height } = Dimensions.get("window");
 
 //FIREBASE
-import * as firebase from 'firebase'
-
+import * as firebase from "firebase";
 
 export default function LoginScreen({ navigation }) {
-    const [email,setEmail]=useState('')
-const [password,setPassword]=useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-const handleSignIn=()=>{
-    firebase
-    .auth()
-    .signInWithEmailAndPassword(email,password)
-    .then((response)=>{
-        console.log(response)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-}
+  const handleSignIn = async() => {
+      const response = await firebase.auth().signInWithEmailAndPassword(email,password);
+      response
+      .then(()=>{
+          navigation.navigate('Home')
+      })
+      
+    
+  };
 
   return (
     <SafeAreaView
@@ -69,34 +66,33 @@ const handleSignIn=()=>{
             >
               Login
             </Text>
-            <View style={{marginTop:20}}> 
-              <TextInput 
-              mode={"outlined"}
-              style={{backgroundColor:"#ccca",borderColor:"red"}}
-              label="Email"
-              onChangeText={setEmail}
-              value={email}
-              selectionColor="#13A64A"
-        underlineColor="#13A64A"
+            <View style={{ marginTop: 20 }}>
+              <TextInput
+                mode={"outlined"}
+                style={{ backgroundColor: "#ccca", borderColor: "red" }}
+                label="Email"
+                onChangeText={setEmail}
+                value={email}
+                selectionColor="#13A64A"
+                underlineColor="#13A64A"
               />
-              <TextInput 
-              mode={"outlined"}
-              style={{backgroundColor:"#ccca",borderColor:"red"}}
-              label="Password"
-              onChangeText={setPassword}
-              value={password}
-              selectionColor="#13A64A"
-        underlineColor="#13A64A"
+              <TextInput
+                mode={"outlined"}
+                style={{ backgroundColor: "#ccca", borderColor: "red" }}
+                label="Password"
+                onChangeText={setPassword}
+                value={password}
+                selectionColor="#13A64A"
+                underlineColor="#13A64A"
               />
 
               <MButton
-              onPress={handleSignIn}
-              dark
-              style={{marginVertical:10}}
+                onPress={handleSignIn}
+                dark
+                style={{ marginVertical: 10 }}
               >
-                  Login
+                Login
               </MButton>
-
             </View>
           </LinearGradient>
         </ImageBackground>
