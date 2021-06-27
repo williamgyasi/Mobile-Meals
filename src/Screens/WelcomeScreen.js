@@ -23,7 +23,7 @@ export default function WelcomeScreen({ navigation }) {
       <View style={{ height: "70%" }}>
         <ImageBackground
           style={{ width, flex: 1, justifyContent: "flex-end" }}
-          source={require("../Assets/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg")}
+          source={require("../Assets/imagebac.webp")}
           resizeMode="cover"
         >
             <LinearGradient
@@ -51,10 +51,14 @@ export default function WelcomeScreen({ navigation }) {
         </ImageBackground>
       </View>
       <View style={{position:"absolute",bottom:80,right:0,left:0,marginHorizontal:10}}>
-          <MButton style={{marginBottom:10}} >
+          <MButton 
+          onPress={()=>navigation.navigate('Registration')}
+          style={{marginBottom:10}} >
               Register
           </MButton>
-          <MButton dark >
+          <MButton 
+          onPress={()=>navigation.navigate('LoginScreen')}
+          dark >
               Login
           </MButton>
       </View>

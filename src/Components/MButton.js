@@ -1,10 +1,11 @@
 import React from 'react'
 import {TouchableOpacity,Text} from 'react-native'
 
-const MButton =({dark,style,children})=>{
+const MButton =({dark,style,children,onPress})=>{
     return(
         <TouchableOpacity
         activeOpacity={0.8}
+        onPress={onPress}
         style={{
             ...style,
             borderRadius:10,
