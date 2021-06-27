@@ -1,16 +1,82 @@
-import React from 'react'
-import {View,Text,SafeAreaView,StatusBar} from 'react-native'
+import React, { useState } from "react";
+import {
+  ImageBackground,
+  SafeAreaView,
+  Dimensions,
+  Text,
+  StatusBar,
+  View,
+  Button,
+} from "react-native";
+import {TextInput} from 'react-native-paper'
+import { Input, NativeBaseProvider,useColorModeValue } from "native-base";
+import { LinearGradient } from "expo-linear-gradient";
 
-const LoginScreen =()=>{
-    return(
-        <SafeAreaView 
-        style={{
-            marginTop:StatusBar.currentHeight,
-        }}
+//COMPONENTS
+import { MStatusBar, MButton } from "../Components";
+
+const { width, height } = Dimensions.get("window");
+
+
+export default function LoginScreen({ navigation }) {
+    const [email,setEmail]=useState('')
+const [password,setPassword]=useState('')
+
+  return (
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "#000", position: "relative" }}
+    >
+      <MStatusBar />
+      <View style={{ flex: 1 }}>
+        <ImageBackground
+          style={{ width, flex: 1, justifyContent: "flex-end" }}
+          source={require("../Assets/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg")}
+          resizeMode="cover"
         >
-            <Text>i am the homescreen</Text>
-        </SafeAreaView>
-    )
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1 }}
+            colors={["rgba(0,0,0,0.9)", "rgba(0,0,0,0.5)"]}
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              paddingHorizontal: 10,
+              paddingBottom: 50,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 40,
+                color: "#fff",
+                fontWeight: "bold",
+                marginTop: 20,
+              }}
+            >
+              Login
+            </Text>
+            <View style={{marginTop:20}}> 
+              <TextInput 
+              mode={"outlined"}
+              style={{backgroundColor:"#ccca",borderColor:"red"}}
+              label="Email"
+              onChangeText={setEmail}
+              value={email}
+              selectionColor="#13A64A"
+        underlineColor="#13A64A"
+              />
+              <TextInput 
+              mode={"outlined"}
+              style={{backgroundColor:"#ccca",borderColor:"red"}}
+              label="Password"
+              onChangeText={setEmail}
+              value={email}
+              selectionColor="#13A64A"
+        underlineColor="#13A64A"
+              />
+            </View>
+          </LinearGradient>
+        </ImageBackground>
+      </View>
+    </SafeAreaView>
+  );
 }
-
-export default LoginScreen;
