@@ -13,6 +13,7 @@ export default ()=>{
             term: searchTerm,
             location: "san jose",
           },
+          
         });
         // console.log(response.data)
         setResults(response.data.businesses);  

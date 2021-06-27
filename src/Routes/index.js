@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator
-        initialRouteName="Homescreen"
+        initialRouteName="Random"
         screenOptions={{
           headerShown: false,
         }}
