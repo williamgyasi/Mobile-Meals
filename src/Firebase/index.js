@@ -52,3 +52,18 @@ export async function registration(email, password, lastName, firstName) {
       Alert.alert('There is something wrong!', err.message);
     }
   }
+
+
+  export async function GetUserInfoSnapshot(uid) {
+    await SaveNotificationTokenToFireStore(uid)
+    return UsersCollection.doc(uid).get()
+ }
+ 
+ export function GetUIDIfLoggedIn() {
+    return new Promise((resolve, reject) => {
+       firebase.auth().onAuthStateChanged((user) => {
+          user ? resolve(user?.uid) : reject('')
+       })
+    })
+ }
+ 

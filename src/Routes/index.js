@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -13,6 +13,10 @@ import ShowResults from "../Screens/ShowResults";
 import LoginScreen from "../Screens/LoginScreen";
 import WelcomeScreen from "../Screens/WelcomeScreen";
 import RegisterScreen from "../Screens/RegisterScreen";
+
+//FIREBASE
+import {GetUIDIfLoggedIn,GetUserInfoSnapshot} from '../Firebase'
+
 
 const RootStack = createStackNavigator();
 
@@ -37,11 +41,20 @@ const IndexNavigator = ({ initialRouteName }) => {
   );
 };
 
+
 const Navigation = () => {
-  if (!firebase.apps.length) {
-    console.log("Connected With Firebase");
-    firebase.initializeApp(config.firebaseConfig);
-  }
+  const [user,setUser]=useState(null)
+
+  
+  useEffect(()=>{
+    GetUIDIfLoggedIn()
+    .then((uid)=>{
+      GetUserInfoSnapshot(uid)
+      .then((snapshot)=>{
+
+      })
+    })
+  },[])
 
   return (
     <NavigationContainer>

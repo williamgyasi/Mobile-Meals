@@ -6,6 +6,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import Navigation from './src/Routes'
 
 export default function App() {
+  if (!firebase.apps.length) {
+    console.log("Connected With Firebase");
+    firebase.initializeApp(config.firebaseConfig);
+  }
+
   return (
     <Navigation />
   );
