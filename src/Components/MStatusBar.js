@@ -5,8 +5,8 @@ const MStatusBar =({dark,color})=>{
     return(
         <StatusBar
         animated
-        barStyle={dark?'light-content':'dark-content'}
-        backgroundColor={dark?"red":"#fff"}
+        barStyle={dark?'dark-content':'light-content'}
+        backgroundColor={dark?"red":"#000"}
          />
         
     )
