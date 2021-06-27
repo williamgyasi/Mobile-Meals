@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { SafeAreaView, Text, StatusBar } from "react-native";
-import Prodigee from "../Api/Prodigee"
+// import Prodigee from "../Api/Prodigee"
 const Random = () => {
 
   const testApi = async () => {

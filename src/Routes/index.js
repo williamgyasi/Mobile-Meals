@@ -6,21 +6,23 @@ import { createStackNavigator } from "@react-navigation/stack";
 import RandomScreen from "../Screens/Random";
 import HomeScreen from "../Screens/Home";
 import ShowResults from "../Screens/ShowResults";
+import LoginScreen from "../Screens/LoginScreen";
+
 
 const RootStack = createStackNavigator();
-
 const Navigation = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator
-        initialRouteName="Random"
+        initialRouteName="LoginScreen"
         screenOptions={{
           headerShown: false,
         }}
       >
+        <RootStack.Screen name="LoginScreen" component={LoginScreen}/>
         <RootStack.Screen name="Random" component={RandomScreen} />
         <RootStack.Screen name="Homescreen" component={HomeScreen} />
-        <RootStack.Screen name="ShowResults" component={ShowResults} />
+        
       </RootStack.Navigator>
     </NavigationContainer>
   );
