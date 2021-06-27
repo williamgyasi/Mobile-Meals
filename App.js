@@ -5,10 +5,17 @@ import { StyleSheet, Text, View } from 'react-native';
 //NAVIGATION
 import Navigation from './src/Routes'
 
+//FIREBASE
+import * as firebase from "firebase";
+import config from "./src/Firebase/firebaseConfig";
+
 export default function App() {
   if (!firebase.apps.length) {
     console.log("Connected With Firebase");
     firebase.initializeApp(config.firebaseConfig);
+  }
+  else{
+    console.log("ac")
   }
 
   return (
