@@ -17,10 +17,25 @@ import { MStatusBar, MButton } from "../Components";
 
 const { width, height } = Dimensions.get("window");
 
+//FIREBASE
+import * as firebase from 'firebase'
+
 
 export default function LoginScreen({ navigation }) {
     const [email,setEmail]=useState('')
 const [password,setPassword]=useState('')
+
+const handleSignIn=()=>{
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email,password)
+    .then((response)=>{
+        console.log(response)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}
 
   return (
     <SafeAreaView
@@ -68,11 +83,20 @@ const [password,setPassword]=useState('')
               mode={"outlined"}
               style={{backgroundColor:"#ccca",borderColor:"red"}}
               label="Password"
-              onChangeText={setEmail}
-              value={email}
+              onChangeText={setPassword}
+              value={password}
               selectionColor="#13A64A"
         underlineColor="#13A64A"
               />
+
+              <MButton
+              onPress={handleSignIn}
+              dark
+              style={{marginVertical:10}}
+              >
+                  Login
+              </MButton>
+
             </View>
           </LinearGradient>
         </ImageBackground>

@@ -9,7 +9,7 @@ const MButton =({dark,style,children,onPress})=>{
         style={{
             ...style,
             borderRadius:10,
-            padding:20,
+            padding:10,
             borderWidth:dark?1:null,
             borderColor:dark?'#8DE969':"#fff",
             backgroundColor:dark?null:"#8DE969"
