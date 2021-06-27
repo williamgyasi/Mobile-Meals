@@ -1,22 +1,20 @@
-import {ImageBackground, StyleSheet, View, Text} from 'react-native';
+import {ImageBackground, SafeAreaView, Dimensions, Text,StatusBar} from 'react-native';
 import React from 'react';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {LinearGradient} from 'expo-linear-gradient'
+
+const {width,height}=Dimensions.get('window') 
+
 
 export default function WelcomeScreen ({navigation}) {
   return (
-     <ImageBackground
-      style={styles.background}
-      source={require('../assets/background.jpg')}>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Welcome to Firebase/Firestore Example</Text>
-      </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Sign Up')} >
-        <Text style={styles.buttonText}>Sign Up</Text>
-       </TouchableOpacity>
-      <Text style={styles.inlineText}>Already have an account?</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Sign In')}>
-        <Text style={styles.buttonText}>Sign In</Text>
-      </TouchableOpacity>
-     </ImageBackground>
+     <SafeAreaView style={{height:"60%",backgroundColor:"#000"}}>
+         <StatusBar />
+         <ImageBackground 
+         style={{width}}
+         >
+
+         </ImageBackground>
+
+     </SafeAreaView>
   )
 }
