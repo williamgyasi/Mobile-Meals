@@ -7,9 +7,6 @@ import * as firebase from "firebase";
 import config from "../Firebase/firebaseConfig";
 
 //SCREENS
-import RandomScreen from "../Screens/Random";
-import HomeScreen from "../Screens/Home";
-import ShowResults from "../Screens/ShowResults";
 import LoginScreen from "../Screens/LoginScreen";
 import WelcomeScreen from "../Screens/WelcomeScreen";
 import RegisterScreen from "../Screens/RegisterScreen";

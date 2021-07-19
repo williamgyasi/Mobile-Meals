@@ -1,6 +1,5 @@
-import { View } from 'native-base'
 import React from 'react'
-import { Text } from 'react-native'
+import { Text,View } from 'react-native'
 
 const HomeScreen = ()=>{
     return(
