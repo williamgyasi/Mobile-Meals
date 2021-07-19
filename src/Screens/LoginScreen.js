@@ -24,14 +24,13 @@ export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignIn = async() => {
-      const response = await firebase.auth().signInWithEmailAndPassword(email,password);
-      response
-      .then(()=>{
-          navigation.navigate('Home')
-      })
-      
-    
+  const handleSignIn = async () => {
+    const response = await firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password);
+    response.then(() => {
+      navigation.navigate("Home");
+    });
   };
 
   return (
