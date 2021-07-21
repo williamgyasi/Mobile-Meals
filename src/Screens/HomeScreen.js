@@ -1,11 +1,20 @@
 import React from 'react'
-import { Text,View } from 'react-native'
+import { Text,View,StatusBar,SafeAreaView } from 'react-native'
+
+
+//COMPONENTS
+import {MStatusBar} from '../Components'
 
 const HomeScreen = ()=>{
+
     return(
-        <View>
-            <Text>I AM THE WELCOME SCREEN</Text>
-        </View>
+        <SafeAreaView
+        style={{
+            marginTop:StatusBar.currentHeight
+        }}
+        >
+            <Text style={{fontFamily:'Roboto_500Medium'}}>I AM THE Home SCREEN</Text>
+        </SafeAreaView>
     )
 }
 

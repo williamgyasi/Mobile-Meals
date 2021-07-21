@@ -1,6 +1,7 @@
 import React from 'react'
 import {View,Text,SafeAreaView,StatusBar} from 'react-native'
 
+
 const RegisterScreen =()=>{
     return(
         <SafeAreaView 
@@ -8,7 +9,7 @@ const RegisterScreen =()=>{
             marginTop:StatusBar.currentHeight,
         }}
         >
-            <Text>i am the registerScreen</Text>
+             <Text style={{fontFamily:'Roboto_100Thin'}}>I AM THE REGISTRATION SCREEN</Text>
         </SafeAreaView>
     )
 }
