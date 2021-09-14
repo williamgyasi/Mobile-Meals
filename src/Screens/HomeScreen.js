@@ -13,7 +13,7 @@ const HomeScreen = ()=>{
             marginTop:StatusBar.currentHeight
         }}
         >
-            <Text style={{fontFamily:'Roboto_500Medium'}}>I AM THE Home SCREEN</Text>
+            <Text style={{fontFamily:'Metropolis-Light',fontSize:40}}>I AM THE Lock Screen </Text>
         </SafeAreaView>
     )
 }
