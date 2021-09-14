@@ -17,6 +17,9 @@ import { MStatusBar, MButton } from "../Components";
 
 const { width, height } = Dimensions.get("window");
 
+//CONSTANTS
+import {COLORS} from '../Constants/Colors'
+
 //FIREBASE
 import * as firebase from "firebase";
 
@@ -26,6 +29,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleSignIn = async () => {
     const response = await firebase
+    
       .auth()
       .signInWithEmailAndPassword(email, password);
     response.then(() => {
