@@ -8,13 +8,9 @@ import {MStatusBar} from '../Components'
 const HomeScreen = ()=>{
 
     return(
-        <SafeAreaView
-        style={{
-            marginTop:StatusBar.currentHeight
-        }}
-        >
-            <Text style={{fontFamily:'Metropolis-Light',fontSize:40}}>I AM THE Lock Screen </Text>
-        </SafeAreaView>
+        <>
+
+        </>
     )
 }
 

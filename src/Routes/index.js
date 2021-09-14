@@ -45,7 +45,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <IndexNavigator initialRouteName="HomeScreen" />
+      <IndexNavigator initialRouteName="LoginScreen" />
     </NavigationContainer>
   );
 };
