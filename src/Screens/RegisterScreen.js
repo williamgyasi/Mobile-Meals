@@ -1,17 +1,97 @@
-import React from 'react'
-import {View,Text,SafeAreaView,StatusBar} from 'react-native'
+import React from "react";
+import { View, SafeAreaView, Text } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { flexDirection, justifyContent } from "styled-system";
 
+//COMPONENTS
+import { MStatusBar, MTextInput, MButton } from "../Components";
 
-const RegisterScreen =()=>{
-    return(
-        <SafeAreaView 
+const RegisterScreen = () => {
+  return (
+    <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
+      <MStatusBar />
+      <View
         style={{
-            marginTop:StatusBar.currentHeight,
+          alignItems: "center",
+          justifyContent: "center",
+          marginVertical: 40,
         }}
+      >
+        <Text style={{ fontFamily: "Metropolis-SemiBold", fontSize: 25 }}>
+          Sign Up
+        </Text>
+        <Text style={{ fontFamily: "Metropolis-Regular", marginTop: 6 }}>
+          Add your details to sign up
+        </Text>
+      </View>
+
+      <View style={{ marginHorizontal: 15 }}>
+        <MTextInput placeholder="Email">Email</MTextInput>
+
+        <MTextInput placeholder={"Password"}>Password</MTextInput>
+      </View>
+      <MButton bgcolor={"#FC6011"} style={{justifyContent:"center"}}>Login</MButton>
+
+      <TouchableOpacity activeOpacity={0.75}>
+        <Text
+          style={{
+            textAlign: "center",
+            marginVertical: 10,
+            fontFamily: "Metropolis-Regular",
+            color: "#7C7D7E",
+          }}
         >
-             <Text style={{fontFamily:'Roboto_100Thin'}}>I AM THE REGISTRATION SCREEN</Text>
-        </SafeAreaView>
-    )
-}
+          Forgot your password?
+        </Text>
+      </TouchableOpacity>
+
+      <View style={{ marginTop: 60 }}>
+        <Text
+          style={{
+            textAlign: "center",
+            marginVertical: 10,
+            fontFamily: "Metropolis-Regular",
+            letterSpacing: 4,
+          }}
+        >
+          or Login With
+        </Text>
+        <MButton icon iconName="facebook" bgcolor={"#347EC0"} style={{ marginBottom: 10,justifyContent:"center" }}>
+          Login With Facebook
+        </MButton>
+        <MButton icon iconName="google" style={{ marginBottom: 10,justifyContent:"center",alignItems:"center" }} bgcolor={"#E04E42"}>Google Sign In</MButton>
+      </View>
+
+      <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "row",
+          bottom: 10,
+          position: "absolute",
+          right: 0,
+          left: 0,
+        }}
+      >
+        <Text
+          style={{
+            textAlign: "center",
+            marginVertical: 10,
+            fontFamily: "Metropolis-Regular",
+            color: "#7C7D7E",
+            marginRight:3
+          }}
+        >
+          Already have an account?
+          
+        </Text>
+        <TouchableOpacity activeOpacity={0.85}>
+            <Text  style={{color:"#FC6011"}}>Login</Text>
+          </TouchableOpacity>
+      </View>
+
+    </SafeAreaView>
+  );
+};
 
 export default RegisterScreen;

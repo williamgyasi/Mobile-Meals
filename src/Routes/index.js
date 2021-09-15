@@ -45,7 +45,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <IndexNavigator initialRouteName="LoginScreen" />
+      <IndexNavigator initialRouteName="Registration" />
     </NavigationContainer>
   );
 };

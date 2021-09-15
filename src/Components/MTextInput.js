@@ -1,27 +1,33 @@
 import React from "react"
+import {TextInput} from 'react-native-paper'
 import { Input, Center, NativeBaseProvider } from "native-base"
-export const Example = () => {
+
+const theme={
+    colors:{
+        primary:"transparent",
+        underlineColor:"green"
+    },
+    roundness:40
+}
+const MTextInput = ({value,OnChangeValue,placeholder,children}) => {
   return (
-    <Input
-      w="100%"
-      mx={3}
-      placeholder="Default Input"
-      _light={{
-        placeholderTextColor: "blueGray.400",
-      }}
-      _dark={{
-        placeholderTextColor: "blueGray.50",
-      }}
-    />
+    <TextInput
+    theme={theme}
+    style={{
+        backgroundColor:"#F2F2F2",
+        marginBottom:30
+    }}
+    placeholderTextColor="#C8C9C9"
+    outlineColor="transparent"
+    mode="outlined"
+    placeholder={children}
+    value={value}
+    passwordRules={false}
+    onChangeText={OnChangeValue}
+  />
   )
 }
 
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1}>
-        <Example />
-      </Center>
-    </NativeBaseProvider>
-  )
-}
+
+export default MTextInput
+
