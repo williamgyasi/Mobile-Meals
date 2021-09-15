@@ -5,22 +5,26 @@ import {
   StatusBar,
   SafeAreaView,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
-import { alignSelf, justifyContent } from "styled-system";
+
+const {height} =Dimensions.get("window")
+
 
 //COMPONENTS
-import { MStatusBar, MTextInput, MButton } from "../Components";
+import { MStatusBar, MTextInput, MButton,MFloatingButton } from "../Components";
 
 const NewPasswordScreen = () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <MStatusBar />
+      <MFloatingButton style={{left:10,top:20}} />
       <Text
         style={{
           fontFamily: "Metropolis-SemiBold",
           fontSize: 25,
           textAlign: "center",
-          marginTop: 30,
+          marginTop: height*0.11,
         }}
       >
         New Password
@@ -37,106 +41,21 @@ const NewPasswordScreen = () => {
         Please enter a new password to reset your account
       </Text>
 
-      <View style={{ 
-          flexDirection: "row", 
-      flexWrap: "wrap",
-      marginHorizontal:35,marginVertical:20,
-      justifyContent:"space-around"
-      }}>
-          <Text 
-          adjustsFontSizeToFit={true}
-          style={{
-              width:50,
-              height:50,
-              backgroundColor:"#F2F2F2",
-              textAlign:"center",
-              borderRadius:10,
-              textAlignVertical:"center",
-              
-              alignSelf:"center"
-          }}>
-              1
-          </Text>
+      <MTextInput placeholder="Email">New Password</MTextInput>
+      <MTextInput placeholder="Email">Confirm Password</MTextInput>
 
-          <Text 
-          adjustsFontSizeToFit={true}
-          style={{
-              width:50,
-              height:50,
-              backgroundColor:"#F2F2F2",
-              textAlign:"center",
-              borderRadius:10,
-              textAlignVertical:"center",
-              
-              alignSelf:"center"
-          }}>
-              1
-          </Text>
-
-          <Text 
-          adjustsFontSizeToFit={true}
-          style={{
-              width:50,
-              height:50,
-              backgroundColor:"#F2F2F2",
-              textAlign:"center",
-              borderRadius:10,
-              textAlignVertical:"center",
-              
-              alignSelf:"center"
-          }}>
-              1
-          </Text>
-          <Text 
-          adjustsFontSizeToFit={true}
-          style={{
-              width:50,
-              height:50,
-              backgroundColor:"#F2F2F2",
-              textAlign:"center",
-              borderRadius:10,
-              textAlignVertical:"center",
-              
-              alignSelf:"center"
-          }}>
-              1
-          </Text>
-
-      </View>
+      
 
       <MButton
         icon
-        iconName="arrow-right"
+        iconName="check-circle"
         bgcolor={"#FC6011"}
         style={{ justifyContent: "center" }}
       >
-        Next
+        Confirm
       </MButton>
 
-      <View
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "row",
-        }}
-      >
-        <Text
-          style={{
-            textAlign: "center",
-            marginVertical: 10,
-            fontFamily: "Metropolis-Regular",
-            color: "#7C7D7E",
-            marginRight: 3,
-          }}
-        >
-          Didnt recieve yet?
-        </Text>
-        <TouchableOpacity activeOpacity={0.85}>
-          <Text style={{ color: "#FC6011", marginVertical: 20 }}>
-            Click Here
-          </Text>
-        </TouchableOpacity>
-      </View>
+      
     </SafeAreaView>
   );
 };
