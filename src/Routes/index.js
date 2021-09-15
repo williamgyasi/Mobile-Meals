@@ -8,6 +8,7 @@ import LoginScreen from "../Screens/LoginScreen";
 import WelcomeScreen from "../Screens/WelcomeScreen";
 import RegisterScreen from "../Screens/RegisterScreen";
 import HomeScreen from "../Screens/HomeScreen";
+import ForgotPassword from "../Screens/ForgotPassword";
 
 const RootStack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const IndexStack = [
   { name: "WelcomeScreen", component: WelcomeScreen },
   { name: "Registration", component: RegisterScreen },
   { name: "HomeScreen", component: HomeScreen},
+  { name: "ForgotPassword", component: ForgotPassword},
 
 ];
 
@@ -45,7 +47,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <IndexNavigator initialRouteName="Registration" />
+      <IndexNavigator initialRouteName="ForgotPassword" />
     </NavigationContainer>
   );
 };
