@@ -11,7 +11,7 @@ import { alignSelf, justifyContent } from "styled-system";
 //COMPONENTS
 import { MStatusBar, MTextInput, MButton } from "../Components";
 
-const OTPScreen = () => {
+const NewPasswordScreen = () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <MStatusBar />
@@ -23,7 +23,7 @@ const OTPScreen = () => {
           marginTop: 30,
         }}
       >
-        We have sent an OTP to your Mobile
+        New Password
       </Text>
       <Text
         style={{
@@ -34,7 +34,7 @@ const OTPScreen = () => {
           color: "#515056",
         }}
       >
-        Please check your mobile number continue to reset password
+        Please enter a new password to reset your account
       </Text>
 
       <View style={{ 
@@ -141,4 +141,4 @@ const OTPScreen = () => {
   );
 };
 
-export default OTPScreen;
+export default NewPasswordScreen;

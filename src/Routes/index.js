@@ -9,6 +9,9 @@ import WelcomeScreen from "../Screens/WelcomeScreen";
 import RegisterScreen from "../Screens/RegisterScreen";
 import HomeScreen from "../Screens/HomeScreen";
 import ForgotPassword from "../Screens/ForgotPassword";
+import OTPScreen from "../Screens/OTPScreen";
+import NewPasswordScreen from "../Screens/NewPasswordScreen";
+
 
 const RootStack = createStackNavigator();
 
@@ -18,6 +21,8 @@ const IndexStack = [
   { name: "Registration", component: RegisterScreen },
   { name: "HomeScreen", component: HomeScreen},
   { name: "ForgotPassword", component: ForgotPassword},
+  { name: "OTPScreen", component: OTPScreen},
+  { name: "NewPasswordScreen", component: NewPasswordScreen},
 
 ];
 
@@ -47,7 +52,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <IndexNavigator initialRouteName="ForgotPassword" />
+      <IndexNavigator initialRouteName="NewPasswordScreen" />
     </NavigationContainer>
   );
 };
