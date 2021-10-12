@@ -1,15 +1,23 @@
 import React from "react";
 import { View, SafeAreaView, Text, Image,Dimensions } from "react-native";
+
 import { MStatusBar, MButton } from "../../Components";
 
-const width =Dimensions.get('window').width
+const width =Dimensions.get('window').width;
+const height =Dimensions.get('window').height;
 
-const FirstScreen = () => {
+const FirstScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <MStatusBar />
       {/* Image */}
-      <Image source={require("../../Assets/firstscreen.png")} />
+      <Image 
+      style={{
+          resizeMode:"contain",
+          height:height*0.65,
+          width:width
+      }}
+      source={require("../../Assets/firstscreen.png")} />
 
       {/* DOTS */}
       <View
@@ -19,7 +27,7 @@ const FirstScreen = () => {
           justifyContent: "center",
           padding: 10,
           flexDirection: "row",
-          marginVertical:10
+          
         }}
       >
         <View
@@ -62,7 +70,9 @@ const FirstScreen = () => {
       
 
       {/* BOTTOM */}
-      <MButton bgcolor={"#FC6011"} style={{ justifyContent: "center" }}>
+      <MButton 
+      onPress={()=>navigation.navigate('secondScreen')}
+      bgcolor={"#FC6011"} style={{ justifyContent: "center",marginTop:20 }}>
         Next
       </MButton>
     </SafeAreaView>
