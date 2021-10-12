@@ -15,31 +15,28 @@ import NewPasswordScreen from "../Screens/NewPasswordScreen";
 import FirstScreen from "../Screens/Onboarding/FirstScreen";
 import SecondScreen from "../Screens/Onboarding/SecondScreen";
 import ThirdScreen from "../Screens/Onboarding/ThirdScreen";
+import Onboarding from "../Screens/Onboarding/Onboarding"
 
 const RootStack = createStackNavigator();
 const SliderNav = createStackNavigator();
 
-const sliderStack = [
-  { name: "firstScreen", component: FirstScreen },
-  { name: "secondScreen", component: SecondScreen },
-  { name: "thirdScreen", component: ThirdScreen },
-];
 
 const OnboardingSlider = () => {
   return (
     <SliderNav.Navigator
-      initialRouteName="firstScreen"
+      initialRouteName="Onboarding"
       screenOptions={{
         headerShown: true,
       }}>
-        {sliderStack.map((obj) => (
+        
         <SliderNav.Screen
-          name={obj.name}
-          key={obj.name}
-          options={{ headerShown: false }}
-          component={obj.component}
+          name={"Onboarding"}
+          component={Onboarding}
+          options={{
+            headerShown:false
+          }}
         />
-      ))}
+    
 
 
     </SliderNav.Navigator>

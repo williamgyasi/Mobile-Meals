@@ -70,11 +70,8 @@ const ThirdScreen = ({navigation}) => {
       
 
       {/* BOTTOM */}
-      <MButton 
-      onPress={()=>navigation.navigate('thirdScreen')}
-      bgcolor={"#FC6011"} style={{ justifyContent: "center",marginTop:20 }}>
-        Get Started
-      </MButton>
+      
+      
     </SafeAreaView>
   );
 };
