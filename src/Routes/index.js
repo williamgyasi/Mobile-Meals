@@ -52,7 +52,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <IndexNavigator initialRouteName="NewPasswordScreen" />
+      <IndexNavigator initialRouteName="HomeScreen" />
     </NavigationContainer>
   );
 };
