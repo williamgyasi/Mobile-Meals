@@ -24,7 +24,7 @@ const MButton =({dark,style,children,onPress,bgcolor,icon,iconName})=>{
                 icon &&
                 <FontAwesome5 name={iconName} size={20} color="#fff"  />
             }
-            <Text style={{textAlign:"center",color:"#fff",fontSize:15,fontFamily:"Metropolis-Regular",marginLeft:10}}>
+            <Text style={{textAlign:"center",color:"#fff",fontSize:15,fontFamily:"Metropolis-Bold",marginLeft:10,}}>
                 {children}
             </Text>
             

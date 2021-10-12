@@ -8,6 +8,7 @@ const SecondScreen =()=>{
                 SECOND SCREENS
             </Text>
             
+            
         </View>
     )
 }

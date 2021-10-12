@@ -21,19 +21,19 @@ const SliderNav = createStackNavigator();
 
 const sliderStack = [
   { name: "firstScreen", component: FirstScreen },
-  // { name: "secondScreen", component: SecondScreen },
-  // { name: "thirdScreen", component: ThirdScreen },
+  { name: "secondScreen", component: SecondScreen },
+  { name: "thirdScreen", component: ThirdScreen },
 ];
 
 const OnboardingSlider = () => {
   return (
     <SliderNav.Navigator
-      initialRouteName="OTPScreen"
+      initialRouteName="firstScreen"
       screenOptions={{
         headerShown: true,
       }}>
-        {IndexStack.map((obj) => (
-        <RootStack.Screen
+        {sliderStack.map((obj) => (
+        <SliderNav.Screen
           name={obj.name}
           key={obj.name}
           options={{ headerShown: false }}
